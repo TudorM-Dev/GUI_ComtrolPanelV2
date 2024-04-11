@@ -1,0 +1,11 @@
+python -m pip install pyserial
+python -m pip install inputs
+python -m pip install numpy
+python -m pip install ttkthemes
+python -m pip install opencv-python
+python -m pip install Pillow
+python -m pip install auto-py-to-exe
+python -m pip install matplotlib
+python -m pip install pygrabber
+python -m pip install datetime
+python -m pip install pathlib
