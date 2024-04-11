@@ -9,3 +9,6 @@ python -m pip install matplotlib
 python -m pip install pygrabber
 python -m pip install datetime
 python -m pip install pathlib
+python -m pip install pyttsx3
+python -m pip install pywhatkit
+python -m pip install SpeechRecognition
