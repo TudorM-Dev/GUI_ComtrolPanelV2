@@ -33,7 +33,7 @@ DIR = pathlib.Path(__file__).parent.resolve()
 
 cropping = False
 
-
+#esti gay
 root = Tk()
 root.wm_title("Control Panel V2.1")
 root.iconbitmap(r'Logo.png')
