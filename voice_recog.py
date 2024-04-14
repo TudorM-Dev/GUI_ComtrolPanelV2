@@ -1,34 +1,20 @@
-import speech_recognition as sr
-import datetime
-import subprocess
-import pywhatkit
-import pyttsx3
-import webbrowser
+import speech_recognition
 
-engine=pyttsx3.init()
-voices=engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
-recognizer = sr.Recognizer()
+recognizer = speech_recognition.Recognizer()
 
-def cmd():
-    with sr.Microphone() as source:
-        print("Init the mic...")
-        recognizer.adjust_for_ambient_noise(source, duration=0.5)
-        print("Ask me")
-        recordedAudio=recognizer.listen(source)
-
+while True:
     try:
-        command=recognizer.recognize_google_cloud(recordedAudio)
-        print("Your command", command)
-    except Exception as ex:
-        print(ex)
+        with speech_recognition.Microphone() as mic:
+            print("Ask me")
+            audio=recognizer.listen(mic)    
+            text=recognizer.recognize_google(audio)
+            text = text.lower()
+            print("Your command", text)
 
-            # if 'hello' in command:
-            #     diag = "hi Tudor my master of the greates, just like Kanye West or Ye"
-            #     engine.say(diag)
-            #     engine.runAndWait()
-
-
-cmd()
-
+    except ex:
+        # pass
+        print("idk")
+        recognizer = speech_recognition.Recognizer()
+        continue
+        
 
