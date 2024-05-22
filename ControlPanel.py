@@ -64,7 +64,7 @@ def on_closing():
 global JogStepsStat
 JogStepsStat = IntVar()
 global J1OpenLoopStat
-J1OpenLoopStat = IntVar()
+J1OpenLoopStat = IntVar() 
 global J2OpenLoopStat
 J2OpenLoopStat = IntVar()
 global J3OpenLoopStat
@@ -278,9 +278,9 @@ def setCom2():
 def darkTheme():
   global curTheme
   curTheme = 0
-  style = ThemedStyle(root)
-  style.set_theme("arc")
-  style = ttk.Style()
+  # style = ThemedStyle(root)
+  root.tk.call("source", "azure.tcl")
+  root.tk.call("set_theme", "dark")
 
   # style.configure("Alarm.TLabel", foreground="IndianRed1", font = ('Arial','10','bold'))
   # style.configure("Warn.TLabel", foreground="orange", font = ('Arial','10','bold'))
@@ -296,7 +296,9 @@ def darkTheme():
   # style.configure('TNotebook.Tab', background='salmon')
   
 def lightTheme():
-  darkTheme()
+  # darkTheme()
+  root.tk.call("source", "azure.tcl")
+  root.tk.call("set_theme", "white")
   # global curTheme
   # curTheme = 1
   # style = ThemedStyle(root)
@@ -11700,7 +11702,7 @@ if (J6OpenLoopVal == 1):
   J6OpenLoopStat.set(True)
 if (DisableWristRotVal == 1):
   DisableWristRot.set(True)  
-if (curTheme != 1): 
+if (curTheme == 1): 
   lightTheme()
 else:
   darkTheme()  
